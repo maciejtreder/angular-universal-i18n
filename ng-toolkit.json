@@ -1,0 +1,7 @@
+{
+  "universal": {
+    "project": "angulari18n",
+    "skipInstall": false,
+    "directory": "."
+  }
+}

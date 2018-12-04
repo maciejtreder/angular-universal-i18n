@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angulari18n": {
+    "angular-universal-i18n": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angulari18n",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angulari18n:build"
+            "browserTarget": "angular-universal-i18n:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angulari18n:build:production"
+              "browserTarget": "angular-universal-i18n:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angulari18n:build"
+            "browserTarget": "angular-universal-i18n:build"
           }
         },
         "test": {
@@ -99,10 +99,18 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          }
         }
       }
     },
-    "angulari18n-e2e": {
+    "angular-universal-i18n-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angulari18n:serve"
+            "devServerTarget": "angular-universal-i18n:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angulari18n:serve:production"
+              "devServerTarget": "angular-universal-i18n:serve:production"
             }
           }
         },
@@ -131,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "angulari18n"
+  "defaultProject": "angular-universal-i18n"
 }
